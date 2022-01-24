@@ -11,3 +11,5 @@ PROG = testcmp
 testcmp: testcmp.o mycomplex.o
 	$(LD) $(LDFLAGS) -o testcmp testcmp.o mycomplex.o
 testcmp.o: testcmp.cpp mycomplex.h
+#clean:
+	#rm -f $(OBJ) $(PROG)
