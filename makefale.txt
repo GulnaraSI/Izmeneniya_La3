@@ -1,0 +1,13 @@
+CC = g++
+LD= g++
+CCFLAGS = -g -Wall -pedantic -std=c++17
+LDFLAGS = 
+CPP = $(wildcard *.cpp)
+H = $(wildcard *.h)
+OBJ = $(subst .cpp,.o,$(CPP))
+.SUFFIXES: .cpp .o
+.PHONY: all clean
+PROG = testcmp
+testcmp: testcmp.o mycomplex.o
+	$(LD) $(LDFLAGS) -o testcmp testcmp.o mycomplex.o
+testcmp.o: testcmp.cpp mycomplex.h
